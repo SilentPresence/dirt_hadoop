@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<project>
+  <target name="jar">
+  	<jar destfile="jars/extractionStep1.jar"
+  	  basedir="bin"
+        includes="edu/stanford/nlp/graph/* edu/stanford/nlp/io/* edu/stanford/nlp/ling/* edu/stanford/nlp/ling/tokensregex/* edu/stanford/nlp/ling/tokensregex/parser/*
+  		edu/stanford/nlp/ling/tokensregex/types/* edu/stanford/nlp/math/* edu/stanford/nlp/maxent/* edu/stanford/nlp/maxent/iis/* edu/stanford/nlp/objectbank/*
+  		edu/stanford/nlp/optimization/* edu/stanford/nlp/parser/* edu/stanford/nlp/parser/lexparser/* edu/stanford/nlp/parser/metrics/* edu/stanford/nlp/parser/tools/* 
+  		edu/stanford/nlp/pipeline/* edu/stanford/nlp/process/* edu/stanford/nlp/sequences/* edu/stanford/nlp/stats/* edu/stanford/nlp/tagger/* edu/stanford/nlp/tagger/common/* 
+  		edu/stanford/nlp/tagger/io/* edu/stanford/nlp/tagger/maxent/* edu/stanford/nlp/tagger/maxent/documentation/* edu/stanford/nlp/trees/* edu/stanford/nlp/trees/*
+  		edu/stanford/nlp/trees/tregex/* edu/stanford/nlp/util/* edu/stanford/nlp/util/concurrent/* edu/stanford/nlp/util/logging/*
+  		mapreduce/paths/extraction/step1/* mapreduce/paths/extraction/writables/keys/* mapreduce/paths/extraction/writables/values/* mapreduce/paths/extraction/Groups.class">
+  	  <manifest>
+  	  <attribute name="Main-Class" value="mapreduce.paths.extraction.step1.PathCreator" />
+  	  </manifest>
+  	</jar>
+  	<jar destfile="jars/extractionStep2.jar"
+  	  basedir="bin"
+        includes="mapreduce/paths/extraction/step2/* mapreduce/paths/extraction/writables/keys/* mapreduce/paths/extraction/writables/values/* mapreduce/paths/extraction/Groups.class">
+  	  <manifest>
+  	  <attribute name="Main-Class" value="mapreduce.paths.extraction.step2.MinNumFeatureFilter" />
+  	  </manifest>
+  	</jar>
+  	<jar destfile="jars/extractionStep3.jar"
+  	  basedir="bin"
+        includes="mapreduce/paths/extraction/step3/* mapreduce/paths/extraction/writables/keys/* mapreduce/paths/extraction/writables/values/* mapreduce/paths/extraction/Groups.class">
+  	  <manifest>
+  	  <attribute name="Main-Class" value="mapreduce.paths.extraction.step3.SlotOccurenceInPathCounter" />
+  	  </manifest>
+  	 </jar>
+  	<jar destfile="jars/extractionStep4.jar"
+  	  	  basedir="bin"
+  	        includes="mapreduce/paths/extraction/step4/* mapreduce/paths/extraction/writables/keys/* mapreduce/paths/extraction/writables/values/* mapreduce/paths/extraction/Groups.class">
+  	  	  <manifest>
+  	  	  <attribute name="Main-Class" value="mapreduce.paths.extraction.step4.WordSlotCounter" />
+  	  	  </manifest>
+  	  	 </jar>
+  	<jar destfile="jars/extractionStep5.jar"
+  	  	  basedir="bin"
+  	        includes="mapreduce/paths/extraction/step5/* mapreduce/paths/extraction/writables/keys/* mapreduce/paths/extraction/writables/values/* mapreduce/paths/extraction/Groups.class">
+  	  	  <manifest>
+  	  	  <attribute name="Main-Class" value="mapreduce.paths.extraction.step5.VectorSumCounter" />
+  	  	  </manifest>
+  	  	 </jar>
+  	
+  	<jar destfile="jars/similarityStep1.jar"
+  	  	  basedir="bin"
+  	        includes="mapreduce/paths/similarity/step1/* mapreduce/paths/similarity/writables/key/* mapreduce/paths/similarity/writables/values/* mapreduce/paths/similarity/PathNumber.class">
+  	  	  <manifest>
+  	  	  <attribute name="Main-Class" value="mapreduce.paths.similarity.step1.Join" />
+  	  	  </manifest>
+  	  	 </jar>
+  	<jar destfile="jars/similarityStep2.jar"
+  	  	  basedir="bin"
+  	        includes="mapreduce/paths/similarity/step2/* mapreduce/paths/similarity/writables/key/* mapreduce/paths/similarity/writables/values/* mapreduce/paths/similarity/PathNumber.class">
+  	  	  <manifest>
+  	  	  <attribute name="Main-Class" value="mapreduce.paths.similarity.step2.SlotSimilarityIntersection" />
+  	  	  </manifest>
+  	  	 </jar>
+  	<jar destfile="jars/similarityStep3.jar"
+  	  	  basedir="bin"
+  	        includes="mapreduce/paths/similarity/step3/* mapreduce/paths/similarity/writables/key/* mapreduce/paths/similarity/writables/values/* mapreduce/paths/similarity/PathNumber.class">
+  	  	  <manifest>
+  	  	  <attribute name="Main-Class" value="mapreduce.paths.similarity.step3.SlotSimilarityCalculation" />
+  	  	  </manifest>
+  	  	 </jar>
+  	<jar destfile="jars/similarityStep4.jar"
+  	  	  basedir="bin"
+  	        includes="mapreduce/paths/similarity/step4/* mapreduce/paths/similarity/writables/key/* mapreduce/paths/similarity/writables/values/* mapreduce/paths/similarity/PathNumber.class">
+  	  	  <manifest>
+  	  	  <attribute name="Main-Class" value="mapreduce.paths.similarity.step4.TemplateSimilarityCalculation" />
+  	  	  </manifest>
+  	  	 </jar>
+  </target>
+</project> 
